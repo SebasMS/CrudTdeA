@@ -26,7 +26,7 @@ namespace CrudTdeA
 		{
 			Persona persona = new Persona();
 			persona.cedula = txtcedula.Text;
-			persona.nombre = txtfechaNacimiento.Text;
+			persona.nombre = txtnombre.Text;
 			persona.apellido = txtapellido.Text;
 			persona.fechaNacimiento =Convert.ToDateTime( txtfechaNacimiento.Text);
 			persona.edad = Convert.ToInt32(txtedad.Text);
@@ -51,7 +51,7 @@ namespace CrudTdeA
 		{
 			Persona persona = new Persona();
 			persona.cedula = txtcedula.Text;
-			persona.nombre = txtfechaNacimiento.Text;
+			persona.nombre = txtnombre.Text;
 			persona.apellido = txtapellido.Text;
 			persona.fechaNacimiento = Convert.ToDateTime(txtfechaNacimiento.Text);
 			persona.edad = Convert.ToInt32(txtedad.Text);
@@ -68,6 +68,45 @@ namespace CrudTdeA
 				ClientScript.RegisterClientScriptBlock(this.GetType(),
 						"registro", "<script>alert('registro no actualizar')</script>");
 
+			}
+		}
+
+		protected void btnConsultar_Click(object sender, EventArgs e)
+		{
+			Persona persona = new Persona();
+			if ((persona = persona.getPersona(txtcedula.Text)) != null)
+			{
+				txtcedula.Text = persona.cedula;
+				txtnombre.Text = persona.nombre;
+				txtapellido.Text = persona.apellido;
+				txtfechaNacimiento.Text = persona.fechaNacimiento+"";
+				txtedad.Text = persona.edad.ToString();
+				txtdireccion.Text = persona.direccion;
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+						"registro", "<script>alert('registro encontrado')</script>");
+			}
+			else
+			{
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+							"registro", "<script>alert('registro no encontrado')</script>");
+			
+			}
+		}
+
+		protected void btnEliminar_Click(object sender, EventArgs e)
+		{
+			Persona persona = new Persona();
+			if (persona.eliminaPersona(txtcedula.Text) > 0)
+			{
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+							"registro", "<script>alert('registro eliminado')</script>");
+				Cargar();
+			}
+			else
+			{
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+								"registro", "<script>alert('registro no eliminado')</script>");
+			
 			}
 		}
 	}
