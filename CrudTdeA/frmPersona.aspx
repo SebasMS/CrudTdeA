@@ -29,7 +29,7 @@
 		<tr>
 			<td style="width: 161px">Fecha Nacimiento *</td>
 			<td>
-				<asp:TextBox ID="txtfechaNacimiento" runat="server"></asp:TextBox>
+				<asp:TextBox ID="txtfechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
 				<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" BackColor="#993333" ControlToValidate="txtfechaNacimiento" ErrorMessage="Debe ingresar una fecha nacimiento"></asp:RequiredFieldValidator>
 			</td>
 		</tr>
@@ -48,7 +48,7 @@
 		</tr>
 	</table>
 	<br />
-	<asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
+	<asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
 
 	<br />
 	<asp:GridView ID="dgvPersona" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">

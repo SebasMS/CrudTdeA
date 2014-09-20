@@ -16,5 +16,30 @@ namespace CrudTdeA
 			dgvPersona.DataSource = persona.listarPersona();
 			dgvPersona.DataBind();
 		}
+
+		protected void btnGuardar_Click(object sender, EventArgs e)
+		{
+			Persona persona = new Persona();
+			persona.cedula = txtcedula.Text;
+			persona.nombre = txtfechaNacimiento.Text;
+			persona.apellido = txtapellido.Text;
+			persona.fechaNacimiento =Convert.ToDateTime( txtfechaNacimiento.Text);
+			persona.edad = Convert.ToInt32(txtedad.Text);
+			persona.direccion = txtdireccion.Text;
+			if (persona.nuevaPersona(persona) > 0)
+			{
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+					"registro", "<script>alert('registro insertado correctamente')</script>");
+				
+				dgvPersona.DataBind();
+			}
+			else
+			{
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+						"registro", "<script>alert('registro no insertado')</script>");
+			
+			}
+
+		}
 	}
 }
