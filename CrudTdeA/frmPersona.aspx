@@ -49,6 +49,7 @@
 	</table>
 	<br />
 	<asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+	<asp:Button ID="btnActualizar" runat="server" Text="Acualizar" OnClick="btnActualizar_Click" />
 
 	<br />
 	<asp:GridView ID="dgvPersona" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">

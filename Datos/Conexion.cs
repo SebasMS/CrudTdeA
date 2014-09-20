@@ -15,7 +15,7 @@ namespace Datos
 
 		// retorno cadenaconexión
 		public string cadenaConexion() {//método para capturar los datos de conexión con la base de datos
-			return @"data source=.;initial=Practica1;user id=esneyder;password=alvarez123";//cadena conexión 
+			return @"data source=.;initial catalog=Practica1;user id=esneyder;password=alvarez123";//cadena conexión 
 		}
 
 		#region método conexión

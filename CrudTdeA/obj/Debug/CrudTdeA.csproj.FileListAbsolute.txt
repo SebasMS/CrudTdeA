@@ -64,3 +64,7 @@ C:\Users\Edwin\Documents\Visual Studio 2013\Projects\CrudTdeA\CrudTdeA\bin\es\Mi
 C:\Users\Edwin\Documents\Visual Studio 2013\Projects\CrudTdeA\CrudTdeA\obj\Debug\CrudTdeA.csprojResolveAssemblyReference.cache
 C:\Users\Edwin\Documents\Visual Studio 2013\Projects\CrudTdeA\CrudTdeA\obj\Debug\CrudTdeA.dll
 C:\Users\Edwin\Documents\Visual Studio 2013\Projects\CrudTdeA\CrudTdeA\obj\Debug\CrudTdeA.pdb
+C:\Users\Edwin\documents\visual studio 2013\Projects\CrudTdeA\CrudTdeA\bin\Negocio.dll
+C:\Users\Edwin\documents\visual studio 2013\Projects\CrudTdeA\CrudTdeA\bin\Datos.dll
+C:\Users\Edwin\documents\visual studio 2013\Projects\CrudTdeA\CrudTdeA\bin\Negocio.pdb
+C:\Users\Edwin\documents\visual studio 2013\Projects\CrudTdeA\CrudTdeA\bin\Datos.pdb

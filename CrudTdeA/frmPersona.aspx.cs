@@ -12,6 +12,11 @@ namespace CrudTdeA
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			Cargar();
+		}
+
+		private void Cargar()
+		{
 			Persona persona = new Persona();
 			dgvPersona.DataSource = persona.listarPersona();
 			dgvPersona.DataBind();
@@ -30,8 +35,8 @@ namespace CrudTdeA
 			{
 				ClientScript.RegisterClientScriptBlock(this.GetType(),
 					"registro", "<script>alert('registro insertado correctamente')</script>");
-				
-				dgvPersona.DataBind();
+
+				Cargar();
 			}
 			else
 			{
@@ -40,6 +45,30 @@ namespace CrudTdeA
 			
 			}
 
+		}
+
+		protected void btnActualizar_Click(object sender, EventArgs e)
+		{
+			Persona persona = new Persona();
+			persona.cedula = txtcedula.Text;
+			persona.nombre = txtfechaNacimiento.Text;
+			persona.apellido = txtapellido.Text;
+			persona.fechaNacimiento = Convert.ToDateTime(txtfechaNacimiento.Text);
+			persona.edad = Convert.ToInt32(txtedad.Text);
+			persona.direccion = txtdireccion.Text;
+			if (persona.ActulizarPersona(persona) > 0)
+			{
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+					"registro", "<script>alert('registro actualizado correctamente')</script>");
+
+				Cargar();
+			}
+			else
+			{
+				ClientScript.RegisterClientScriptBlock(this.GetType(),
+						"registro", "<script>alert('registro no actualizar')</script>");
+
+			}
 		}
 	}
 }

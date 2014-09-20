@@ -64,7 +64,7 @@ namespace Negocio
 		public DataTable listarPersona() {
 			DatosSistema datos = new DatosSistema();			 
 			String[] parametros = { "@operacion","@cedula"};
-			return datos.getDatos("spPesonaSE",parametros,"T",0);	
+			return datos.getDatos("spPersonaSE",parametros,"T",0);	
 
 		
 		}
